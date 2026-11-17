@@ -1404,6 +1404,216 @@
       .morph-row { grid-template-columns: 1fr; }
       .btn-hero-download { width: 100%; min-width: 0; }
     }
+
+    /* ======== ADDON: HƯỚNG DẪN SỬA LỖI SMART APP CONTROL WINDOWS 11 ======== */
+    .guide-part-switcher {
+      max-width: 1220px !important;
+      grid-template-columns: repeat(3, 1fr) !important;
+    }
+    .g-part-tab.active.sac-tab {
+      background: linear-gradient(135deg, #ffffff 0%, #ecfdf5 100%);
+      border-color: #0d9488;
+      color: #0b192c;
+      box-shadow: 0 12px 28px rgba(13, 148, 136, 0.22);
+    }
+    .brand-3d-emblem.sac-emblem {
+      background: linear-gradient(145deg, #006770 0%, #0f766e 55%, #047857 100%);
+      color: #ffffff;
+    }
+    .guide-identity-banner.sac-banner {
+      background: linear-gradient(120deg, #063940 0%, #006770 52%, #065f46 100%);
+      border: 1px solid #34d399;
+      box-shadow: 0 12px 30px rgba(0, 103, 112, 0.22);
+    }
+    .v-step-badge.teal {
+      background: linear-gradient(135deg, #006770, #0d9488);
+      color: #ffffff;
+    }
+    .v-step-desc code.teal-code {
+      background: #e6fffa;
+      color: #0f766e;
+    }
+    .sac-popup-mock {
+      background: #ffffff;
+      color: #0f172a;
+      border-radius: 13px;
+      padding: 13px 14px;
+      text-align: left;
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.42);
+    }
+    .sac-popup-mock h4 {
+      margin: 0 0 6px;
+      font-size: 12.2px;
+      font-weight: 800;
+      color: #0f172a;
+      line-height: 1.3;
+    }
+    .sac-popup-mock p {
+      margin: 0 0 8px;
+      font-size: 10px;
+      color: #475569;
+      line-height: 1.42;
+    }
+    .sac-popup-btns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 7px;
+      margin-top: 8px;
+    }
+    .sac-btn-okay {
+      padding: 7px 10px;
+      border-radius: 6px;
+      background: #006770;
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: 850;
+      text-align: center;
+      border: 2px solid #ef4444;
+      box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.28);
+      animation: targetPulse 1.5s infinite;
+    }
+    .sac-btn-store {
+      padding: 7px 8px;
+      border-radius: 6px;
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      color: #64748b;
+      font-size: 10px;
+      text-align: center;
+    }
+    .sac-search-bar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 11px;
+      border-radius: 99px;
+      background: #f8fafc;
+      border: 2px solid #ef4444;
+      font-size: 11.5px;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 9px;
+    }
+    .sac-app-result {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 11px;
+      border-radius: 10px;
+      background: #eff6ff;
+      border: 2px solid #ef4444;
+      box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.22);
+      animation: targetPulse 1.6s infinite;
+    }
+    .sac-shield-ico {
+      width: 32px;
+      height: 32px;
+      flex: 0 0 32px;
+      border-radius: 9px;
+      background: linear-gradient(135deg, #0ea5e9, #0284c7);
+      color: #ffffff;
+      display: grid;
+      place-items: center;
+      font-size: 16px;
+    }
+    .sac-sec-layout {
+      display: grid;
+      grid-template-columns: 34px 1fr;
+      gap: 10px;
+      align-items: center;
+    }
+    .sac-sec-rail {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      align-items: center;
+      padding: 8px 4px;
+      border-radius: 8px;
+      background: #f1f5f9;
+      color: #64748b;
+      font-size: 12px;
+    }
+    .sac-tile-target {
+      padding: 11px 12px;
+      border-radius: 10px;
+      background: #f8fafc;
+      border: 2px solid #ef4444;
+      box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.22);
+      animation: targetPulse 1.6s infinite;
+    }
+    .sac-link-target {
+      display: inline-block;
+      margin-top: 6px;
+      padding: 6px 10px;
+      border-radius: 7px;
+      background: #fef2f2;
+      border: 2px solid #ef4444;
+      color: #006770;
+      font-size: 11.5px;
+      font-weight: 850;
+      text-decoration: underline;
+      box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.22);
+      animation: targetPulse 1.6s infinite;
+    }
+    .sac-radio-list { display: grid; gap: 6px; margin-top: 6px; }
+    .sac-radio-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 5px 9px;
+      border-radius: 7px;
+      font-size: 11px;
+      color: #475569;
+    }
+    .sac-radio-dot {
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      border: 1.5px solid #94a3b8;
+      display: inline-block;
+    }
+    .sac-radio-item.active-off {
+      background: #fef2f2;
+      border: 2px solid #ef4444;
+      color: #0f172a;
+      font-weight: 850;
+      box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.22);
+      animation: targetPulse 1.6s infinite;
+    }
+    .sac-radio-item.active-off .sac-radio-dot {
+      border: 4.5px solid #0284c7;
+      background: #ffffff;
+    }
+    .sac-done-banner {
+      margin-top: 20px;
+      padding: 15px 22px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #ecfdf5 0%, #f0fdf4 50%, #ffffff 100%);
+      border: 1.5px solid #6ee7b7;
+      box-shadow: 0 10px 28px rgba(16, 185, 129, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      text-align: center;
+    }
+    .sac-done-check {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: #ffffff;
+      font-weight: 900;
+      display: grid;
+      place-items: center;
+      font-size: 16px;
+    }
+    .sac-done-banner strong { font-size: 16px; font-weight: 900; color: #047857; }
+    .sac-done-banner span { font-size: 14px; font-weight: 650; color: #0f172a; }
+    @media (max-width: 1120px) {
+      .guide-part-switcher { grid-template-columns: 1fr !important; }
+    }
   </style>
 </head>
 <body>
@@ -1442,6 +1652,13 @@
         <path d="M10.1 19.7c-2.8-1.2-4.6-4.1-4.3-7.3.4-3.6 3.5-6.4 7.2-6.4 2.1 0 4 .9 5.2 2.4.7.9.9 2 .4 3-.4.8-1.3 1.4-2.4 1.4-1.1 0-1.9-.6-2.4-1.3-.3-.4-.4-.9-.3-1.4-1.7.1-3 1.5-3 3.2 0 1.8 1.5 3.3 3.3 3.3 1.7 0 3.2-.8 4.2-2.1.3-.4.9-.3.8.2-.4 2.9-2.9 5.2-5.9 5.5-1 .1-1.9-.1-2.8-.5Z" fill="url(#edge-grad-mid)"/>
         <!-- Lớp vòm sóng trên cùng xanh ngọc lục bảo -->
         <path d="M12 2C6.5 2 2 6.5 2 12c0 2.6 1 5 2.7 6.8-.8-1.6-1.1-3.5-.7-5.4.7-3.4 3.7-5.9 7.2-5.9 2.2 0 4.2 1 5.4 2.7.5.7 1.4 1.1 2.2.9 1-.2 1.8-1.1 1.9-2.1.2-1.2-.2-2.5-.9-3.5C18 3.3 15.2 2 12 2Z" fill="url(#edge-grad-top)"/>
+      </g>
+
+      <!-- Icon Khiên Windows 11 Smart App Control -->
+      <g id="icon-win11-shield">
+        <path d="M12 2L4 5.5v6c0 5.25 3.4 10.15 8 11.5 4.6-1.35 8-6.25 8-11.5v-6L12 2Z" fill="#34d399"/>
+        <path d="M12 2v21c4.6-1.35 8-6.25 8-11.5v-6L12 2Z" fill="#10b981"/>
+        <path d="M9.5 12.2l1.8 1.8 3.7-3.7" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
       </g>
     </defs>
   </svg>
@@ -1855,6 +2072,16 @@
             <small>Khi trình duyệt báo "isn't commonly downloaded" lúc tải file</small>
           </div>
         </button>
+        <button type="button" class="g-part-tab sac-tab" data-guide-part="sac">
+          <div class="brand-3d-emblem sac-emblem">
+            <svg viewBox="0 0 24 24"><use href="#icon-win11-shield"/></svg>
+            <span class="emblem-letter-tag">S</span>
+          </div>
+          <div>
+            <b>3. Sửa lỗi "Smart App Control" (Win 11)</b>
+            <small>Khi hiện bảng "Smart App Control blocked an app..."</small>
+          </div>
+        </button>
       </div>
 
       <!-- ==================== PHẦN 1: WINDOWS (W) ==================== -->
@@ -2060,6 +2287,211 @@
               </div>
             </div>
           </article>
+        </div>
+      </div>
+
+      <!-- ==================== PHẦN 3: QUY TRÌNH KHẮC PHỤC LỖI SMART APP CONTROL TRÊN WINDOWS 11 ==================== -->
+      <div class="guide-part-panel" data-guide-panel="sac">
+        <div class="guide-identity-banner sac-banner">
+          <div class="gib-left">
+            <div class="brand-3d-emblem sac-emblem" style="width:46px;height:46px;flex-basis:46px;">
+              <svg viewBox="0 0 24 24"><use href="#icon-win11-shield"/></svg>
+              <span class="emblem-letter-tag">S</span>
+            </div>
+            <div>
+              <b>QUY TRÌNH KHẮC PHỤC LỖI SMART APP CONTROL KHI CÀI ĐẶT DDIF OFFICE v2.0</b>
+              <span>Áp dụng khi Windows 11 xuất hiện thông báo: “Smart App Control blocked an app that may be unsafe”.</span>
+            </div>
+          </div>
+          <span class="gib-pill">Thực hiện 6 bước bên dưới</span>
+        </div>
+
+        <div class="visual-steps-grid">
+          <!-- BƯỚC 1 -->
+          <article class="v-step-card">
+            <div>
+              <div class="v-step-head">
+                <span class="v-step-badge teal">Bước 1</span>
+                <h3>Nhấn <code>Okay</code> để đóng thông báo lỗi.</h3>
+              </div>
+              <p class="v-step-desc" style="margin-top:8px;">
+                Khi Windows 11 xuất hiện thông báo <i>“Smart App Control blocked an app that may be unsafe”</i>, nhấn <code class="teal-code">Okay</code> để đóng thông báo lỗi.
+              </p>
+            </div>
+
+            <div class="v-step-art">
+              <div class="sac-popup-mock">
+                <h4>Smart App Control blocked an app that may be unsafe</h4>
+                <p>We blocked C:\Users\Admin\Downloads\DDIF_Office_v2.0_Setup.exe because we could not verify its publisher to confirm it was safe to run.</p>
+                <div class="sac-popup-btns">
+                  <span class="sac-btn-okay">Okay 👈 ① Nhấn Okay</span>
+                  <span class="sac-btn-store">Get apps from the Store</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- BƯỚC 2 -->
+          <article class="v-step-card">
+            <div>
+              <div class="v-step-head">
+                <span class="v-step-badge teal">Bước 2</span>
+                <h3>Nhấn phím Windows, tìm và mở <code>Windows Security</code>.</h3>
+              </div>
+              <p class="v-step-desc" style="margin-top:8px;">
+                Nhấn phím <b>Windows</b> trên bàn phím, tìm và mở <code class="teal-code">Windows Security</code>.
+              </p>
+            </div>
+
+            <div class="v-step-art">
+              <div class="sac-popup-mock">
+                <div class="sac-search-bar">
+                  <span>🔍</span>
+                  <span>Windows Security</span>
+                </div>
+                <div style="display:flex;gap:8px;font-size:10px;color:#64748b;margin-bottom:8px;">
+                  <b style="color:#0284c7;background:#e0f2fe;padding:2px 7px;border-radius:99px;">All</b>
+                  <span>Apps</span>
+                  <span>Documents</span>
+                  <span>Web</span>
+                </div>
+                <div class="sac-app-result">
+                  <div class="sac-shield-ico">🛡️</div>
+                  <div>
+                    <b style="display:block;font-size:12px;color:#0f172a;">Windows Security 👈 ② Mở</b>
+                    <small style="font-size:10px;color:#64748b;">App</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- BƯỚC 3 -->
+          <article class="v-step-card">
+            <div>
+              <div class="v-step-head">
+                <span class="v-step-badge teal">Bước 3</span>
+                <h3>Chọn <code>App &amp; browser control</code>.</h3>
+              </div>
+              <p class="v-step-desc" style="margin-top:8px;">
+                Trong cửa sổ <i>Windows Security</i>, chọn <code class="teal-code">App &amp; browser control</code>.
+              </p>
+            </div>
+
+            <div class="v-step-art">
+              <div class="sac-popup-mock">
+                <div style="font-size:10.5px;font-weight:800;color:#64748b;margin-bottom:8px;">Windows Security</div>
+                <div class="sac-sec-layout">
+                  <div class="sac-sec-rail">
+                    <span>🏠</span>
+                    <span>🛡️</span>
+                    <span>👤</span>
+                    <span style="color:#0284c7;font-weight:900;">🪟</span>
+                  </div>
+                  <div class="sac-tile-target">
+                    <div style="font-size:18px;margin-bottom:4px;">🪟 <span style="color:#16a34a;font-size:13px;">●</span></div>
+                    <b style="display:block;font-size:12px;color:#0f172a;">App &amp; browser control 👈 ③ Chọn</b>
+                    <small style="font-size:10px;color:#64748b;">No action needed.</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- BƯỚC 4 -->
+          <article class="v-step-card">
+            <div>
+              <div class="v-step-head">
+                <span class="v-step-badge teal">Bước 4</span>
+                <h3>Chọn <code>Smart App Control settings</code>.</h3>
+              </div>
+              <p class="v-step-desc" style="margin-top:8px;">
+                Tại mục <b>Smart App Control</b>, chọn <code class="teal-code">Smart App Control settings</code>.
+              </p>
+            </div>
+
+            <div class="v-step-art">
+              <div class="sac-popup-mock">
+                <div style="font-size:11.5px;font-weight:800;color:#0f172a;margin-bottom:8px;">← App &amp; browser control</div>
+                <div style="padding:8px 10px;border-radius:9px;background:#f8fafc;border:1px solid #e2e8f0;">
+                  <b style="display:block;font-size:12px;color:#0f172a;">🛡️ Smart App Control</b>
+                  <span style="display:block;font-size:10px;color:#64748b;margin:3px 0 6px;">Helps protect your device from untrusted apps.</span>
+                  <span class="sac-link-target">Smart App Control settings 👈 ④ Chọn</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- BƯỚC 5 -->
+          <article class="v-step-card">
+            <div>
+              <div class="v-step-head">
+                <span class="v-step-badge teal">Bước 5</span>
+                <h3>Chọn <code>Off</code> và xác nhận.</h3>
+              </div>
+              <p class="v-step-desc" style="margin-top:8px;">
+                Tích chọn <code class="teal-code">Off</code> và xác nhận.
+              </p>
+            </div>
+
+            <div class="v-step-art">
+              <div class="sac-popup-mock">
+                <b style="display:block;font-size:12.5px;color:#0f172a;">Smart App Control</b>
+                <span style="display:block;font-size:10px;color:#64748b;margin-top:2px;">Enhanced protection from untrusted apps.</span>
+                <div class="sac-radio-list">
+                  <div class="sac-radio-item">
+                    <span class="sac-radio-dot"></span>
+                    <span>On (recommended)</span>
+                  </div>
+                  <div class="sac-radio-item">
+                    <span class="sac-radio-dot"></span>
+                    <span>Evaluation</span>
+                  </div>
+                  <div class="sac-radio-item active-off">
+                    <span class="sac-radio-dot"></span>
+                    <span>Off 👈 ⑤ Chọn Off &amp; xác nhận</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- BƯỚC 6 -->
+          <article class="v-step-card">
+            <div>
+              <div class="v-step-head">
+                <span class="v-step-badge teal">Bước 6</span>
+                <h3>Mở lại <code>DDIF_Office_v2.0_Setup.exe</code> để tiến hành cài đặt.</h3>
+              </div>
+              <p class="v-step-desc" style="margin-top:8px;">
+                Mở lại <code class="teal-code">DDIF_Office_v2.0_Setup.exe</code> để tiến hành cài đặt.
+              </p>
+            </div>
+
+            <div class="v-step-art">
+              <div class="sac-popup-mock">
+                <div style="display:flex;align-items:center;gap:8px;padding:6px 10px;border-radius:8px;background:#f1f5f9;font-size:11px;font-weight:700;color:#334155;margin-bottom:10px;">
+                  <span>←</span>
+                  <span>⬇ &gt; Downloads</span>
+                </div>
+                <div class="sac-app-result" style="background:#fff7ed;border-color:#ef4444;">
+                  <div style="width:36px;height:28px;flex:0 0 36px;">
+                    <img src="https://github.com/quocddif/DDIF-Office/blob/main/Logo%20Office%20r%E1%BB%93ng%20cam%20v%C3%A0%20s%C3%B3ng%20xanh(2).png?raw=true" alt="" style="max-width:100%;max-height:100%;object-fit:contain;" />
+                  </div>
+                  <div>
+                    <b style="display:block;font-size:12px;color:#0b192c;">DDIF_Office_v2.0_Setup.exe</b>
+                    <span style="font-size:10.5px;color:#dc2626;font-weight:800;">👆 ⑥ Mở lại để cài đặt</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="sac-done-banner">
+          <div class="sac-done-check">✓</div>
+          <strong>Hoàn tất!</strong>
+          <span>Bạn đã tắt Smart App Control và có thể cài đặt DDIF Office bình thường.</span>
         </div>
       </div>
     </section>
