@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DDIF Office v2.0 — Trợ lý Chuẩn hóa Văn bản, Đặt tên Hồ sơ & Công cụ PDF</title>
+  <title>DDIF Office — Trợ lý Chuẩn hóa Văn bản, Đặt tên Hồ sơ & Công cụ PDF</title>
   <style>
     :root {
       --bg-dark: #050b14;
@@ -27,7 +27,7 @@
       margin: 0;
       font-family: var(--font);
       color: var(--ink);
-      background: #f5f8fc;
+      background-color: #f4f7fb;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
     }
@@ -38,7 +38,7 @@
       top: 14px;
       z-index: 1000;
       padding: 0 clamp(14px, 2.5vw, 32px);
-      margin-bottom: -80px;
+      margin-bottom: -82px;
     }
     .navbar {
       max-width: 1280px;
@@ -46,11 +46,11 @@
       margin: 0 auto;
       padding: 8px 14px 8px 18px;
       border-radius: 20px;
-      background: rgba(8, 18, 36, 0.84);
-      backdrop-filter: blur(24px) saturate(180%);
-      -webkit-backdrop-filter: blur(24px) saturate(180%);
+      background: rgba(7, 16, 32, 0.82);
+      backdrop-filter: blur(26px) saturate(190%);
+      -webkit-backdrop-filter: blur(26px) saturate(190%);
       border: 1px solid rgba(255, 255, 255, 0.18);
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.38), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+      box-shadow: 0 22px 54px rgba(2, 8, 20, 0.42), inset 0 1px 0 rgba(255, 255, 255, 0.24);
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -167,32 +167,88 @@
     }
     .nav-dl-btn svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2.3; }
 
-    /* ==================== 2. CINEMATIC "OH WOW" HERO STAGE ==================== */
-    .hero-cinema {
+    /* ==================== 2. CINEMATIC "OH WOW" HERO & ULTRA-SMOOTH DIFFUSION STAGE ==================== */
+    .hero-atmosphere-shell {
       position: relative;
-      padding: 138px clamp(14px, 3vw, 36px) 98px;
-      background:
-        radial-gradient(ellipse 68% 55% at 50% 18%, rgba(243, 106, 22, 0.24), transparent 65%),
-        radial-gradient(ellipse 55% 45% at 20% 30%, rgba(13, 110, 253, 0.25), transparent 65%),
-        radial-gradient(ellipse 55% 45% at 80% 35%, rgba(16, 185, 129, 0.15), transparent 65%),
-        linear-gradient(180deg, #040a14 0%, #09172e 65%, #0d213f 100%);
-      color: #ffffff;
-      text-align: center;
-      overflow: hidden;
       isolation: isolate;
+      overflow: hidden;
+      padding-bottom: 72px;
+      /* Dải chuyển sắc Easing 14 điểm dừng siêu mượt + Vầng sáng vòm ngược từ dưới lên xóa sạch mọi vệt cắt ngang */
+      background:
+        radial-gradient(ellipse 130% 380px at 50% 100%, #f4f7fb 18%, rgba(244, 247, 251, 0.92) 45%, rgba(244, 247, 251, 0.52) 70%, rgba(244, 247, 251, 0) 100%),
+        radial-gradient(ellipse 90% 440px at 50% 82%, rgba(224, 242, 254, 0.72) 0%, rgba(186, 230, 253, 0.25) 52%, transparent 80%),
+        radial-gradient(ellipse 68% 36% at 50% 11%, rgba(243, 106, 22, 0.23), transparent 66%),
+        radial-gradient(ellipse 58% 34% at 18% 22%, rgba(13, 110, 253, 0.25), transparent 68%),
+        radial-gradient(ellipse 58% 34% at 82% 26%, rgba(16, 185, 129, 0.16), transparent 68%),
+        linear-gradient(
+          180deg,
+          #040a14 0%,
+          #061123 18%,
+          #08172e 36%,
+          #0b1e3b 52%,
+          #0f274a 61%,
+          #163663 68%,
+          #234b7e 74%,
+          #38669c 79.5%,
+          #5685ba 84.5%,
+          #7ca6d4 89%,
+          #a7c6e7 93%,
+          #cde0f3 96.2%,
+          #e6eff9 98.4%,
+          #f4f7fb 100%
+        );
     }
-    .hero-cinema::before {
+
+    /* Lưới ánh sáng không gian phía trên Hero */
+    .hero-atmosphere-shell::before {
       content: "";
       position: absolute;
-      inset: 0;
+      inset: 0 0 42% 0;
       background-image:
         linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
       background-size: 46px 46px;
-      -webkit-mask-image: radial-gradient(ellipse 75% 65% at 50% 35%, #000 20%, transparent 78%);
-      mask-image: radial-gradient(ellipse 75% 65% at 50% 35%, #000 20%, transparent 78%);
+      -webkit-mask-image: radial-gradient(ellipse 78% 65% at 50% 26%, #000 18%, transparent 76%);
+      mask-image: radial-gradient(ellipse 78% 65% at 50% 26%, #000 18%, transparent 76%);
+      z-index: -2;
+      pointer-events: none;
+    }
+
+    /* Lớp sương ánh sáng khuếch tán mềm mại dưới đáy khung Showcase */
+    .hero-atmosphere-shell::after {
+      content: "";
+      position: absolute;
+      left: -10%;
+      right: -10%;
+      bottom: 0;
+      height: 360px;
+      background:
+        radial-gradient(ellipse 75% 80% at 50% 100%, #f4f7fb 25%, rgba(244, 247, 251, 0.86) 58%, transparent 100%);
       z-index: -1;
       pointer-events: none;
+    }
+
+    /* Vầng sáng chân trời (Horizon Aurora Halo) ôm trọn phía sau khung Showcase */
+    .hero-horizon-glow {
+      position: absolute;
+      left: 50%;
+      top: 480px;
+      transform: translateX(-50%);
+      width: min(1420px, 110vw);
+      height: 520px;
+      border-radius: 50%;
+      background:
+        radial-gradient(ellipse at 50% 40%, rgba(56, 189, 248, 0.24) 0%, rgba(243, 106, 22, 0.12) 42%, rgba(15, 23, 42, 0) 74%);
+      filter: blur(44px);
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .hero-cinema {
+      position: relative;
+      padding: 138px clamp(14px, 3vw, 36px) 46px;
+      color: #ffffff;
+      text-align: center;
     }
 
     .hero-inner {
@@ -353,10 +409,13 @@
       margin-top: 4px;
     }
     .hero-trust-pills span {
-      padding: 6px 14px;
+      padding: 7px 15px;
       border-radius: 99px;
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(8, 20, 40, 0.52);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      box-shadow: 0 8px 20px rgba(2, 8, 22, 0.24);
       font-size: 12.2px;
       font-weight: 650;
       color: #e2e8f0;
@@ -364,26 +423,73 @@
     .hero-trust-pills b { color: #34d399; }
 
     /* ==================== 3. SÂN KHẤU BIỂU DIỄN 3 TÍNH NĂNG CHỦ ĐẠO (1 - 2 - 3) ==================== */
+    .showcase-stage-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 clamp(14px, 3vw, 36px);
+      position: relative;
+      z-index: 10;
+    }
+
     .container {
       max-width: 1280px;
       margin: 0 auto;
       padding: 0 clamp(14px, 3vw, 36px) 84px;
+      position: relative;
+      z-index: 5;
     }
 
     .showcase-wrapper {
-      margin-top: -48px;
       position: relative;
       z-index: 10;
       scroll-margin-top: 96px;
     }
+
+    /* Lớp vỏ kính sang trọng (Glass Bezel Pedestal) có bóng đổ Sapphire dịu hòa tan vào nền sáng */
+    .showcase-glass-pedestal {
+      position: relative;
+      padding: 10px;
+      border-radius: 38px;
+      background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.20) 0%,
+        rgba(125, 211, 252, 0.18) 52%,
+        rgba(255, 255, 255, 0.65) 100%
+      );
+      backdrop-filter: blur(22px);
+      -webkit-backdrop-filter: blur(22px);
+      border: 1px solid rgba(255, 255, 255, 0.42);
+      box-shadow:
+        0 30px 75px -16px rgba(11, 31, 61, 0.26),
+        0 14px 36px -10px rgba(14, 165, 233, 0.14),
+        inset 0 1px 1px rgba(255, 255, 255, 0.65);
+    }
+
+    /* Thanh ánh sáng hắt đỉnh khung (Top Specular Beam) */
+    .showcase-glass-pedestal::before {
+      content: "";
+      position: absolute;
+      top: -1px;
+      left: 14%;
+      right: 14%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(253, 230, 138, 0.9), rgba(56, 189, 248, 0.9), transparent);
+      border-radius: 99px;
+      filter: drop-shadow(0 0 12px rgba(251, 191, 36, 0.65));
+      pointer-events: none;
+    }
+
     .showcase-deck {
-      border-radius: 32px;
+      border-radius: 29px;
       padding: 28px;
       background:
-        radial-gradient(ellipse 80% 50% at 50% 0%, rgba(56, 189, 248, 0.15), transparent 70%),
-        linear-gradient(165deg, #071224 0%, #0c1f3a 55%, #071324 100%);
-      border: 1.5px solid rgba(251, 191, 36, 0.44);
-      box-shadow: 0 36px 90px rgba(4, 10, 22, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.22);
+        radial-gradient(ellipse 80% 52% at 50% 0%, rgba(56, 189, 248, 0.18), transparent 70%),
+        radial-gradient(ellipse 60% 45% at 88% 100%, rgba(16, 185, 129, 0.12), transparent 70%),
+        linear-gradient(165deg, #071326 0%, #0b1f3b 54%, #08172e 100%);
+      border: 1.5px solid rgba(251, 191, 36, 0.42);
+      box-shadow:
+        0 18px 44px rgba(6, 17, 36, 0.32),
+        inset 0 1px 0 rgba(255, 255, 255, 0.22);
       color: #ffffff;
     }
 
@@ -399,7 +505,7 @@
       padding: 16px 20px;
       border-radius: 20px;
       border: 1px solid rgba(255, 255, 255, 0.12);
-      background: rgba(255, 255, 255, 0.04);
+      background: rgba(255, 255, 255, 0.045);
       color: #cbd5e1;
       cursor: pointer;
       display: flex;
@@ -408,15 +514,15 @@
       transition: all 0.24s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     .d-tab:hover {
-      background: rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.09);
       color: #ffffff;
       transform: translateY(-2px);
     }
     .d-tab.active {
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.06));
-      border-color: rgba(251, 191, 36, 0.8);
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.17), rgba(255, 255, 255, 0.06));
+      border-color: rgba(251, 191, 36, 0.85);
       color: #ffffff;
-      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.35);
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.36), inset 0 1px 0 rgba(255, 255, 255, 0.25);
     }
     .d-tab-num {
       width: 46px;
@@ -961,58 +1067,74 @@
     .pdf-power-card h4 { margin: 0 0 5px; font-size: 16px; font-weight: 850; color: #ffffff; }
     .pdf-power-card p { margin: 0; font-size: 12.4px; line-height: 1.5; color: #cbd5e1; }
 
-    /* ==================== 4. HƯỚNG DẪN WINDOWS & EDGE VỚI BIỂU TƯỢNG W & E THẬT ==================== */
+    /* ==================== 4. HƯỚNG DẪN WINDOWS & EDGE LIỀN MẠCH TRÊN NỀN SÁNG ==================== */
     .guide-master-section {
-      margin-top: 64px;
+      margin-top: 4px;
       scroll-margin-top: 96px;
+      position: relative;
+      padding: 8px 0 24px;
     }
     .guide-master-head {
       text-align: center;
-      margin-bottom: 26px;
+      margin-bottom: 28px;
     }
-    .guide-master-head span {
-      display: inline-block;
-      padding: 5px 14px;
-      border-radius: 99px;
-      background: #fff3e8;
-      border: 1px solid #fed7aa;
-      color: #c2410c;
+    .guide-eyebrow-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 7px 18px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(14, 165, 233, 0.28);
+      box-shadow: 0 10px 26px rgba(15, 23, 42, 0.06);
       font-size: 11.5px;
       font-weight: 850;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
-      margin-bottom: 8px;
+      color: #0f172a;
+      margin-bottom: 14px;
+    }
+    .guide-eyebrow-badge i {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #f36a16, #0ea5e9);
+      box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.15);
     }
     .guide-master-head h2 {
-      margin: 0 0 8px;
-      font-size: clamp(25px, 3.2vw, 34px);
+      margin: 0 0 10px;
+      font-size: clamp(25px, 3.2vw, 35px);
       font-weight: 900;
-      letter-spacing: -0.6px;
+      letter-spacing: -0.7px;
       color: #071324;
     }
     .guide-master-head p {
       margin: 0 auto;
-      font-size: 15px;
-      color: var(--muted);
+      font-size: 15.2px;
+      color: var(--ink-soft);
       max-width: 680px;
     }
 
     .guide-part-switcher {
       max-width: 880px;
-      margin: 0 auto 28px;
-      padding: 8px;
-      border-radius: 24px;
-      background: #e2e8f0;
+      margin: 0 auto 26px;
+      padding: 9px;
+      border-radius: 26px;
+      background: rgba(255, 255, 255, 0.78);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(203, 213, 225, 0.85);
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 10px;
-      box-shadow: inset 0 2px 5px rgba(15, 23, 42, 0.08);
+      box-shadow: 0 18px 42px -12px rgba(15, 23, 42, 0.08), inset 0 1px 0 #ffffff;
     }
     .g-part-tab {
       appearance: none;
       border: 2px solid transparent;
       padding: 14px 18px;
       border-radius: 18px;
-      background: rgba(255, 255, 255, 0.55);
+      background: rgba(241, 245, 249, 0.7);
       color: #475569;
       font-family: inherit;
       cursor: pointer;
@@ -1023,20 +1145,21 @@
       transition: all 0.24s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     .g-part-tab:hover {
-      background: rgba(255, 255, 255, 0.85);
-      transform: translateY(-1px);
+      background: #ffffff;
+      transform: translateY(-1.5px);
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
     }
     .g-part-tab.active.win-tab {
       background: linear-gradient(135deg, #ffffff 0%, #eff6ff 100%);
       border-color: #2563eb;
       color: #0b192c;
-      box-shadow: 0 12px 28px rgba(37, 99, 235, 0.18);
+      box-shadow: 0 12px 28px rgba(37, 99, 235, 0.16);
     }
     .g-part-tab.active.edge-tab {
       background: linear-gradient(135deg, #ffffff 0%, #fff7ed 100%);
       border-color: #f36a16;
       color: #0b192c;
-      box-shadow: 0 12px 28px rgba(243, 106, 22, 0.20);
+      box-shadow: 0 12px 28px rgba(243, 106, 22, 0.18);
     }
 
     /* Huy hiệu 3D Biểu tượng Windows (W) & Microsoft Edge thật (E) */
@@ -1325,10 +1448,12 @@
     }
 
     .footer {
-      margin-top: 56px;
-      padding: 18px 24px;
-      border-radius: 18px;
-      background: #06101e;
+      margin-top: 48px;
+      padding: 20px 26px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #06101e 0%, #0b1c36 100%);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 18px 40px rgba(6, 16, 30, 0.16);
       color: #cbd5e1;
       display: flex;
       justify-content: space-between;
@@ -1403,6 +1528,8 @@
       .guide-part-switcher, .pdf-bento-stage, .extracted-nodes-grid { grid-template-columns: 1fr; }
       .morph-row { grid-template-columns: 1fr; }
       .btn-hero-download { width: 100%; min-width: 0; }
+      .showcase-glass-pedestal { padding: 7px; border-radius: 30px; }
+      .showcase-deck { padding: 18px; border-radius: 24px; }
     }
 
     /* ======== ADDON: HƯỚNG DẪN SỬA LỖI SMART APP CONTROL WINDOWS 11 ======== */
@@ -1671,7 +1798,7 @@
           <img src="https://github.com/quocddif/DDIF-Office/blob/main/Logo%20Office%20r%E1%BB%93ng%20cam%20v%C3%A0%20s%C3%B3ng%20xanh(2).png?raw=true" alt="DDIF Office Logo" />
         </div>
         <div class="brand-copy">
-          <strong>DDIF Office v2.0</strong>
+          <strong>DDIF Office</strong>
           <span>Trợ lý Văn bản &amp; Hồ sơ Điện tử</span>
         </div>
       </a>
@@ -1698,352 +1825,364 @@
     </header>
   </div>
 
-  <!-- 2. SÂN KHẤU HERO "OH WOW" -->
-  <section class="hero-cinema">
-    <div class="hero-inner">
-      <div class="hero-logo-pedestal">
-        <div class="logo-halo-ring"></div>
-        <div class="logo-orbit-ring"></div>
-        <img src="https://github.com/quocddif/DDIF-Office/blob/main/Logo%20Office%20r%E1%BB%93ng%20cam%20v%C3%A0%20s%C3%B3ng%20xanh(2).png?raw=true" alt="DDIF Office v2.0" />
-      </div>
+  <!-- 2. VÙNG CHUYỂN CẢNH ĐA TẦNG (ATMOSPHERIC HORIZON SHELL) ÔM TRỌN HERO & SHOWCASE -->
+  <div class="hero-atmosphere-shell">
+    <div class="hero-horizon-glow" aria-hidden="true"></div>
 
-      <div class="hero-eyebrow-pill">
-        <i></i> DDIF OFFICE V2.0 · BẢN CÀI ĐẶT CHÍNH THỨC CHO WINDOWS 10 / 11
-      </div>
-
-      <h1 class="hero-title">
-        <span class="line-top">Chuẩn hóa thể thức, đặt tên file</span>
-        <span class="line-glow">&amp; xử lý PDF ngay trên máy tính của bạn.</span>
-      </h1>
-
-      <p class="hero-subtitle">
-        Một ứng dụng được xây dựng tại <b>Quỹ Đầu tư phát triển thành phố Đà Nẵng</b> nhằm đồng hành cùng anh chị em trong công tác soạn thảo, rà soát thể thức và chuẩn hóa hồ sơ điện tử nhanh chóng, đồng bộ hơn.
-      </p>
-
-      <div class="hero-cta-wrap">
-        <a href="https://github.com/quocddif/DDIF-Office/releases/latest/download/DDIF_Office_v2.0_Setup.exe" class="btn-hero-download js-dl-exe" download>
-          <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"/></svg>
-          <div>
-            <strong>Tải bộ cài đặt DDIF_Office_v2.0</strong>
-            <small>build 126 (18.11.2026) · Xem hướng dẫn cài đặt bên dưới</small>
-          </div>
-        </a>
-
-        <!-- ĐÃ CẬP NHẬT CHÍNH XÁC 3 DÒNG THEO YÊU CẦU -->
-        <div class="hero-trust-pills">
-          <span><b>✓</b> Chuẩn văn bản hành chính: Nghị định 30/2020/NĐ-CP Về công tác văn thư</span>
-          <span><b>✓</b> Chuẩn Hướng dẫn 05-HD/VPTW năm 2026 Về thể thức và kỹ thuật trình bày văn bản của Đảng </span>
-          <span><b>✓</b> Bảo mật tài liệu không tải lên máy chủ ngoài</span>
+    <!-- SÂN KHẤU HERO "OH WOW" -->
+    <section class="hero-cinema">
+      <div class="hero-inner">
+        <div class="hero-logo-pedestal">
+          <div class="logo-halo-ring"></div>
+          <div class="logo-orbit-ring"></div>
+          <img src="https://github.com/quocddif/DDIF-Office/blob/main/Logo%20Office%20r%E1%BB%93ng%20cam%20v%C3%A0%20s%C3%B3ng%20xanh(2).png?raw=true" alt="DDIF Office" />
         </div>
-      </div>
-    </div>
-  </section>
 
-  <main class="container">
-    <!-- 3. SÂN KHẤU BIỂU DIỄN 3 TÍNH NĂNG CHỦ ĐẠO (1. THỂ THỨC -> 2. CHUẨN HÓA TÊN -> 3. PDF) -->
-    <section class="showcase-wrapper" id="tinh-nang">
-      <div class="showcase-deck">
-        <div class="deck-tabs" role="tablist">
-          <button type="button" class="d-tab active" data-deck-tab="0">
-            <div class="d-tab-num">01</div>
+        <div class="hero-eyebrow-pill">
+          <i></i> DDIF OFFICE · BẢN CÀI ĐẶT CHÍNH THỨC CHO WINDOWS 10 / 11
+        </div>
+
+        <h1 class="hero-title">
+          <span class="line-top">Chuẩn hóa thể thức, đặt tên file</span>
+          <span class="line-glow">&amp; xử lý PDF ngay trên máy tính của bạn.</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          Một ứng dụng được xây dựng tại <b>Quỹ Đầu tư phát triển thành phố Đà Nẵng</b> nhằm đồng hành cùng anh chị em trong công tác soạn thảo, rà soát thể thức và chuẩn hóa hồ sơ điện tử nhanh chóng, đồng bộ hơn.
+        </p>
+
+        <div class="hero-cta-wrap">
+          <a href="https://github.com/quocddif/DDIF-Office/releases/latest/download/DDIF_Office_v2.0_Setup.exe" class="btn-hero-download js-dl-exe" download>
+            <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"/></svg>
             <div>
-              <b>Kiểm tra Thể thức Văn bản</b>
-              <small>Quét X-Ray pháp lý &amp; Sửa thông minh 1 chạm</small>
+              <strong>Tải bộ cài đặt DDIF Office</strong>
+              <small>build 124 (17.11.2026) · Xem hướng dẫn cài đặt bên dưới</small>
             </div>
-          </button>
+          </a>
 
-          <button type="button" class="d-tab" data-deck-tab="1">
-            <div class="d-tab-num">02</div>
-            <div>
-              <b>Chuẩn hóa Tên Văn bản</b>
-              <small>Bóc tách OCR &amp; Biến hình tên file hàng loạt</small>
-            </div>
-          </button>
-
-          <button type="button" class="d-tab" data-deck-tab="2">
-            <div class="d-tab-num">03</div>
-            <div>
-              <b>Bộ Công cụ PDF</b>
-              <small>Nén, Ghép, Tách File PDF, Xoay trang thông minh</small>
-            </div>
-          </button>
-        </div>
-
-        <!-- ================= SÂN KHẤU SỐ 1: KIỂM TRA THỂ THỨC VĂN BẢN ================= -->
-        <div class="deck-stage active" data-deck-stage="0">
-          <div class="stage1-bento">
-            <div class="xray-scanner-card">
-              <div class="xray-beam"></div>
-
-              <div class="xray-top-head">
-                <span class="xray-tag">⚡ TÍNH NĂNG 01 · QUÉT &amp; CHUẨN HÓA TỰ ĐỘNG</span>
-                <button type="button" class="xray-switch-btn" id="morphToggleBtn">
-                  ✨ Chạm xem phép biến đổi 1 chạm
-                </button>
-              </div>
-
-              <div class="morph-cards-stack">
-                <div class="morph-row">
-                  <div class="morph-label">01 · Phông &amp; Cỡ chữ</div>
-                  <div class="morph-compare">
-                    <span class="chip-bad">Calibri / Arial 11pt</span>
-                    <span>→</span>
-                    <span class="chip-good">✓ Times New Roman 13–14pt</span>
-                  </div>
-                  <span class="morph-basis">Phụ lục I · NĐ30</span>
-                </div>
-
-                <div class="morph-row">
-                  <div class="morph-label">02 · Lề trang A4</div>
-                  <div class="morph-compare">
-                    <span class="chip-bad">Lề mặc định 25,4mm</span>
-                    <span>→</span>
-                    <span class="chip-good">✓ Trên 20 · Dưới 20 · Trái 30 · Phải 15mm</span>
-                  </div>
-                  <span class="morph-basis">Điều 9 · NĐ30</span>
-                </div>
-
-                <div class="morph-row">
-                  <div class="morph-label">03 · Đoạn văn &amp; Dòng</div>
-                  <div class="morph-compare">
-                    <span class="chip-bad">Không lùi dòng, sát dòng</span>
-                    <span>→</span>
-                    <span class="chip-good">✓ Lùi đầu dòng 1,27cm · Cách đoạn 6pt</span>
-                  </div>
-                  <span class="morph-basis">Mục II.7 · NĐ30</span>
-                </div>
-
-                <div class="morph-row">
-                  <div class="morph-label">04 · Quốc hiệu &amp; Chữ ký</div>
-                  <div class="morph-compare">
-                    <span class="chip-bad">Lệch bảng, sai cỡ Nơi nhận</span>
-                    <span>→</span>
-                    <span class="chip-good">✓ Căn chuẩn đường kẻ chân &amp; Nơi nhận 11pt</span>
-                  </div>
-                  <span class="morph-basis">NĐ30 &amp; HD05</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="stage1-right-col">
-              <div class="score-hero-widget">
-                <div class="gauge-ring">
-                  <div class="gauge-inner">
-                    <strong id="liveScoreCounter">100</strong>
-                    <small>ĐIỂM CHUẨN</small>
-                  </div>
-                </div>
-                <h3>Tuyệt vời! Văn bản đủ điều kiện ban hành</h3>
-                <p>
-                  Tự động kiểm định song song cả <b>Văn bản Hành chính (NĐ 30/2020/NĐ-CP)</b> và <b>Văn bản Đảng (05-HD/VPTW)</b>, sửa hàng loạt lỗi định dạng nhưng giữ nguyên vẹn bảng biểu và xuất ngay tệp <code>.docx</code> trình ký.
-                </p>
-                <div class="pill-standards-row">
-                  <span>✓ Sửa thông minh 1 chạm</span>
-                  <span>✓ Có nút Hoàn tác an toàn</span>
-                  <span>✓ Xuất Word trình ký ngay</span>
-                </div>
-              </div>
-            </div>
+          <!-- ĐÃ CẬP NHẬT CHÍNH XÁC 3 DÒNG THEO YÊU CẦU -->
+          <div class="hero-trust-pills">
+            <span><b>✓</b> Chuẩn văn bản hành chính: Nghị định 30/2020/NĐ-CP Về công tác văn thư</span>
+            <span><b>✓</b> Chuẩn Hướng dẫn 05-HD/VPTW năm 2026 Về thể thức và kỹ thuật trình bày văn bản của Đảng </span>
+            <span><b>✓</b> Bảo mật tài liệu không tải lên máy chủ ngoài</span>
           </div>
         </div>
-
-        <!-- ================= SÂN KHẤU SỐ 2: MÀN TRÌNH DIỄN ĐỘNG CHUẨN HÓA TÊN VĂN BẢN ================= -->
-        <div class="deck-stage" data-deck-stage="1">
-          <div class="stage2-ocr-theatre">
-            <!-- Cột Trái: Buồng Quét Quang Học OCR 3D -->
-            <div class="ocr-scanner-chamber">
-              <div class="ocr-laser-line"></div>
-
-              <div class="xray-top-head">
-                <span class="xray-tag" style="background:rgba(14,165,233,0.2);border-color:rgba(56,189,248,0.5);color:#7dd3fc;">
-                  🔍 BƯỚC 1 · AI OCR TỰ ĐỘNG BÓC TÁCH TRANG ĐẦU
-                </span>
-                <span style="font-size:11px;color:#94a3b8;font-weight:700;">Đọc cả PDF Scan &amp; Word</span>
-              </div>
-
-              <div class="scanned-doc-holo">
-                <div class="holo-head-grid">
-                  <div>
-                    <b style="font-size:10px;">QUỸ ĐẦU TƯ PHÁT TRIỂN<br/>THÀNH PHỐ ĐÀ NẴNG</b><br/>
-                    <span class="ocr-token t-num">Số: 20/QĐ-HĐQL</span>
-                  </div>
-                  <div>
-                    <b style="font-size:10px;">CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM</b><br/>
-                    <b style="font-size:9.5px;">Độc lập - Tự do - Hạnh phúc</b><br/>
-                    <span class="ocr-token t-date">Đà Nẵng, ngày 24/02/2026</span>
-                  </div>
-                </div>
-
-                <div style="text-align:center;">
-                  <span class="ocr-token t-type">QUYẾT ĐỊNH</span>
-                  <span class="ocr-token t-abs">
-                    Ban hành Quy chế quản lý hoạt động nhận ủy thác và ủy thác tại Quỹ Đầu tư phát triển thành phố Đà Nẵng
-                  </span>
-                </div>
-              </div>
-
-              <div class="extracted-nodes-grid">
-                <div class="ext-node">
-                  <span class="ext-dot" style="background:#f97316;box-shadow:0 0 8px #f97316;"></span>
-                  <div>
-                    <small>Số &amp; Ký hiệu</small>
-                    <b>20.QĐ.HĐQL</b>
-                  </div>
-                </div>
-                <div class="ext-node">
-                  <span class="ext-dot" style="background:#38bdf8;box-shadow:0 0 8px #38bdf8;"></span>
-                  <div>
-                    <small>Ngày ban hành</small>
-                    <b>24.02.2026</b>
-                  </div>
-                </div>
-                <div class="ext-node">
-                  <span class="ext-dot" style="background:#a855f7;box-shadow:0 0 8px #a855f7;"></span>
-                  <div>
-                    <small>Loại văn bản</small>
-                    <b>Quyết định</b>
-                  </div>
-                </div>
-                <div class="ext-node">
-                  <span class="ext-dot" style="background:#22c55e;box-shadow:0 0 8px #22c55e;"></span>
-                  <div>
-                    <small>Trích yếu nội dung</small>
-                    <b>Ban hành Quy chế quản lý...</b>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Cột Phải: Trạm Biến Hình Tên File Hàng Loạt -->
-            <div class="rename-morph-studio">
-              <div class="rename-studio-top">
-                <span class="xray-tag" style="background:rgba(243,106,22,0.22);border-color:rgba(251,191,36,0.5);color:#fde68a;">
-                  ⚡ BƯỚC 2 · ĐẶT LẠI TÊN CHUẨN ĐỒNG LOẠT
-                </span>
-
-                <div class="order-pill-switch">
-                  <button type="button" class="active" data-fname-mode="num">Số trước · Ngày sau</button>
-                  <button type="button" data-fname-mode="date">Ngày trước · Số sau</button>
-                </div>
-              </div>
-
-              <div class="morph-file-cards">
-                <div class="morph-file-card">
-                  <div class="m-file-before">
-                    <span class="m-file-raw">20.QD.QDTPT.24.02.2026.signed.pdf</span>
-                    <span class="m-file-badge">✓ Đã chuẩn hóa OCR</span>
-                  </div>
-                  <div class="m-file-after js-prop-name"
-                       data-num="20.QĐ.HĐQL 24.02.2026 - Quyết định Ban hành Quy chế quản lý hoạt động nhận ủy thác và ủy thác tại Quỹ Đầu tư phát triển thành phố Đà Nẵng.pdf"
-                       data-date="24.02.2026 - 20.QĐ.HĐQL - Quyết định Ban hành Quy chế quản lý hoạt động nhận ủy thác và ủy thác tại Quỹ Đầu tư phát triển thành phố Đà Nẵng.pdf">
-                    20.QĐ.HĐQL 24.02.2026 - Quyết định Ban hành Quy chế quản lý hoạt động nhận ủy thác và ủy thác tại Quỹ Đầu tư phát triển thành phố Đà Nẵng.pdf
-                  </div>
-                </div>
-
-                <div class="morph-file-card">
-                  <div class="m-file-before">
-                    <span class="m-file-raw">21.QD.QDTPT.24.02.2026.signed.pdf</span>
-                    <span class="m-file-badge">✓ Đã chuẩn hóa OCR</span>
-                  </div>
-                  <div class="m-file-after js-prop-name"
-                       data-num="21.QĐ.HĐQL 24.02.2026 - Quyết định Ban hành Quy chế quản lý tài chính và chi tiêu nội bộ tại Quỹ Đầu tư phát triển thành phố Đà Nẵng.pdf"
-                       data-date="24.02.2026 - 21.QĐ.HĐQL - Quyết định Ban hành Quy chế quản lý tài chính và chi tiêu nội bộ tại Quỹ Đầu tư phát triển thành phố Đà Nẵng.pdf">
-                    21.QĐ.HĐQL 24.02.2026 - Quyết định Ban hành Quy chế quản lý tài chính và chi tiêu nội bộ tại Quỹ Đầu tư phát triển thành phố Đà Nẵng.pdf
-                  </div>
-                </div>
-
-                <div class="morph-file-card">
-                  <div class="m-file-before">
-                    <span class="m-file-raw">18.QD.QDTPT.24.02.2026.signed.pdf</span>
-                    <span class="m-file-badge">✓ Đã chuẩn hóa OCR</span>
-                  </div>
-                  <div class="m-file-after js-prop-name"
-                       data-num="18.QĐ.HĐQL 24.02.2026 - Quyết định Ban hành Quy chế huy động vốn tại Quỹ Đầu tư phát triển thành phố Đà Nẵng.pdf"
-                       data-date="24.02.2026 - 18.QĐ.HĐQL - Quyết định Ban hành Quy chế huy động vốn tại Quỹ Đầu tư phát triển thành phố Đà Nẵng.pdf">
-                    18.QĐ.HĐQL 24.02.2026 - Quyết định Ban hành Quy chế huy động vốn tại Quỹ Đầu tư phát triển thành phố Đà Nẵng.pdf
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- ================= SÂN KHẤU SỐ 3: BỘ CÔNG CỤ PDF VĂN PHÒNG ================= -->
-        <div class="deck-stage" data-deck-stage="2">
-          <div class="pdf-bento-stage">
-            <article class="pdf-power-card">
-              <span class="pdf-power-tag orange">01 · XOAY TRANG THÔNG MINH</span>
-              <div class="pdf-visual-box">
-                <div class="anim-rotate-page">
-                  <span class="head"></span>
-                  <span></span>
-                  <span></span>
-                  <div style="font-size:9px;font-weight:900;color:#ea580c;text-align:center;">↻ Tự xoay 180°</div>
-                </div>
-              </div>
-              <div>
-                <h4>Xoay trang thông minh</h4>
-                <p>Phát hiện ngay các trang bị kẹp ngược đầu khi scan và tự động xoay thẳng chuẩn chiều đọc.</p>
-              </div>
-            </article>
-
-            <article class="pdf-power-card">
-              <span class="pdf-power-tag purple">02 · LỌC BỎ TRANG TRẮNG</span>
-              <div class="pdf-visual-box">
-                <div class="anim-blank-group">
-                  <div class="mini-sheet"><i></i><i></i><i></i></div>
-                  <div class="mini-sheet blank-target">Trang trắng</div>
-                  <div class="mini-sheet"><i></i><i></i><i></i></div>
-                </div>
-              </div>
-              <div>
-                <h4>Tự động lọc bỏ trang trắng</h4>
-                <p>Quét và loại bỏ hoàn toàn các trang giấy trắng thừa sinh ra khi scan 2 mặt tự động.</p>
-              </div>
-            </article>
-
-            <article class="pdf-power-card">
-              <span class="pdf-power-tag">03 · GHÉP &amp; TÁCH FILE PDF</span>
-              <div class="pdf-visual-box">
-                <div class="anim-merge-stack">
-                  <div class="merge-doc-a">Tờ trình</div>
-                  <span style="font-weight:900;color:#fde68a;">＋</span>
-                  <div class="merge-doc-b">Phụ lục</div>
-                </div>
-              </div>
-              <div>
-                <h4>Ghép &amp; Tách File PDF</h4>
-                <p>Kéo thả trực quan để ghép nhiều văn bản, bảng biểu, ảnh chụp hoặc tách trang lẻ nhanh chóng.</p>
-              </div>
-            </article>
-
-            <article class="pdf-power-card">
-              <span class="pdf-power-tag emerald">04 · NÉN DUNG LƯỢNG PDF</span>
-              <div class="pdf-visual-box">
-                <div class="anim-compress-meter">
-                  <div class="compress-nums">
-                    <del>14,8 MB</del>
-                    <span>→</span>
-                    <strong>4,2 MB</strong>
-                  </div>
-                  <div class="compress-bar"><i></i></div>
-                  <div style="font-size:10.5px;color:#6ee7b7;font-weight:800;margin-top:7px;">Giảm tới 71% dung lượng</div>
-                </div>
-              </div>
-              <div>
-                <h4>Nén nhẹ &amp; Đóng dấu PDF</h4>
-                <p>Tối ưu dung lượng file nhẹ gọn để đính kèm lên hệ thống văn bản điện tử mà vẫn giữ độ nét.</p>
-              </div>
-            </article>
-          </div>
-        </div>
-
       </div>
     </section>
 
+    <!-- 3. SÂN KHẤU BIỂU DIỄN 3 TÍNH NĂNG CHỦ ĐẠO (ĐƯỢC ĐẶT TRONG KHUNG KÍNH CHUYỂN CẢNH MƯỢT MÀ) -->
+    <div class="showcase-stage-container">
+      <section class="showcase-wrapper" id="tinh-nang">
+        <div class="showcase-glass-pedestal">
+          <div class="showcase-deck">
+            <div class="deck-tabs" role="tablist">
+              <button type="button" class="d-tab active" data-deck-tab="0">
+                <div class="d-tab-num">01</div>
+                <div>
+                  <b>Kiểm tra Thể thức Văn bản</b>
+                  <small>Quét X-Ray pháp lý &amp; Sửa thông minh 1 chạm</small>
+                </div>
+              </button>
+
+              <button type="button" class="d-tab" data-deck-tab="1">
+                <div class="d-tab-num">02</div>
+                <div>
+                  <b>Chuẩn hóa Tên Văn bản</b>
+                  <small>Bóc tách OCR &amp; Biến hình tên file hàng loạt</small>
+                </div>
+              </button>
+
+              <button type="button" class="d-tab" data-deck-tab="2">
+                <div class="d-tab-num">03</div>
+                <div>
+                  <b>Bộ Công cụ PDF</b>
+                  <small>Nén, Ghép, Tách File PDF, Xoay trang thông minh</small>
+                </div>
+              </button>
+            </div>
+
+            <!-- ================= SÂN KHẤU SỐ 1: KIỂM TRA THỂ THỨC VĂN BẢN ================= -->
+            <div class="deck-stage active" data-deck-stage="0">
+              <div class="stage1-bento">
+                <div class="xray-scanner-card">
+                  <div class="xray-beam"></div>
+
+                  <div class="xray-top-head">
+                    <span class="xray-tag">⚡ TÍNH NĂNG 01 · QUÉT &amp; CHUẨN HÓA TỰ ĐỘNG</span>
+                    <button type="button" class="xray-switch-btn" id="morphToggleBtn">
+                      ✨ Chạm xem phép biến đổi 1 chạm
+                    </button>
+                  </div>
+
+                  <div class="morph-cards-stack">
+                    <div class="morph-row">
+                      <div class="morph-label">01 · Phông &amp; Cỡ chữ</div>
+                      <div class="morph-compare">
+                        <span class="chip-bad">Calibri / Arial 11pt</span>
+                        <span>→</span>
+                        <span class="chip-good">✓ Times New Roman 13–14pt</span>
+                      </div>
+                      <span class="morph-basis">Phụ lục I · NĐ30</span>
+                    </div>
+
+                    <div class="morph-row">
+                      <div class="morph-label">02 · Lề trang A4</div>
+                      <div class="morph-compare">
+                        <span class="chip-bad">Lề mặc định 25,4mm</span>
+                        <span>→</span>
+                        <span class="chip-good">✓ Trên 20 · Dưới 20 · Trái 30 · Phải 15mm</span>
+                      </div>
+                      <span class="morph-basis">Điều 9 · NĐ30</span>
+                    </div>
+
+                    <div class="morph-row">
+                      <div class="morph-label">03 · Đoạn văn &amp; Dòng</div>
+                      <div class="morph-compare">
+                        <span class="chip-bad">Không lùi dòng, sát dòng</span>
+                        <span>→</span>
+                        <span class="chip-good">✓ Lùi đầu dòng 1,27cm · Cách đoạn 6pt</span>
+                      </div>
+                      <span class="morph-basis">Mục II.7 · NĐ30</span>
+                    </div>
+
+                    <div class="morph-row">
+                      <div class="morph-label">04 · Quốc hiệu &amp; Chữ ký</div>
+                      <div class="morph-compare">
+                        <span class="chip-bad">Lệch bảng, sai cỡ Nơi nhận</span>
+                        <span>→</span>
+                        <span class="chip-good">✓ Căn chuẩn đường kẻ chân &amp; Nơi nhận 11pt</span>
+                      </div>
+                      <span class="morph-basis">NĐ30 &amp; HD05</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="stage1-right-col">
+                  <div class="score-hero-widget">
+                    <div class="gauge-ring">
+                      <div class="gauge-inner">
+                        <strong id="liveScoreCounter">100</strong>
+                        <small>ĐIỂM CHUẨN</small>
+                      </div>
+                    </div>
+                    <h3>Tuyệt vời! Văn bản đủ điều kiện ban hành</h3>
+                    <p>
+                      Tự động kiểm định song song cả <b>Văn bản Hành chính (NĐ 30/2020/NĐ-CP)</b> và <b>Văn bản Đảng (05-HD/VPTW)</b>, sửa hàng loạt lỗi định dạng nhưng giữ nguyên vẹn bảng biểu và xuất ngay tệp <code>.docx</code> trình ký.
+                    </p>
+                    <div class="pill-standards-row">
+                      <span>✓ Sửa thông minh 1 chạm</span>
+                      <span>✓ Có nút Hoàn tác an toàn</span>
+                      <span>✓ Xuất Word trình ký ngay</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ================= SÂN KHẤU SỐ 2: MÀN TRÌNH DIỄN ĐỘNG CHUẨN HÓA TÊN VĂN BẢN ================= -->
+            <div class="deck-stage" data-deck-stage="1">
+              <div class="stage2-ocr-theatre">
+                <!-- Cột Trái: Buồng Quét Quang Học OCR 3D -->
+                <div class="ocr-scanner-chamber">
+                  <div class="ocr-laser-line"></div>
+
+                  <div class="xray-top-head">
+                    <span class="xray-tag" style="background:rgba(14,165,233,0.2);border-color:rgba(56,189,248,0.5);color:#7dd3fc;">
+                      🔍 BƯỚC 1 · AI OCR TỰ ĐỘNG BÓC TÁCH TRANG ĐẦU
+                    </span>
+                    <span style="font-size:11px;color:#94a3b8;font-weight:700;">Đọc cả PDF Scan &amp; Word</span>
+                  </div>
+
+                  <div class="scanned-doc-holo">
+                    <div class="holo-head-grid">
+                      <div>
+                        <b style="font-size:10px;">QUỸ ĐẦU TƯ PHÁT TRIỂN<br/>THÀNH PHỐ ĐÀ NẴNG</b><br/>
+                        <span class="ocr-token t-num">Số: 20/QĐ-HĐQL</span>
+                      </div>
+                      <div>
+                        <b style="font-size:10px;">CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM</b><br/>
+                        <b style="font-size:9.5px;">Độc lập - Tự do - Hạnh phúc</b><br/>
+                        <span class="ocr-token t-date">Đà Nẵng, ngày 24/02/2026</span>
+                      </div>
+                    </div>
+
+                    <div style="text-align:center;">
+                      <span class="ocr-token t-type">QUYẾT ĐỊNH</span>
+                      <span class="ocr-token t-abs">
+                        Ban hành Quy chế quản lý hoạt động nhận ủy thác và ủy thác tại Quỹ Đầu tư phát triển thành phố Đà Nẵng
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="extracted-nodes-grid">
+                    <div class="ext-node">
+                      <span class="ext-dot" style="background:#f97316;box-shadow:0 0 8px #f97316;"></span>
+                      <div>
+                        <small>Số &amp; Ký hiệu</small>
+                        <b>20.QĐ.HĐQL</b>
+                      </div>
+                    </div>
+                    <div class="ext-node">
+                      <span class="ext-dot" style="background:#38bdf8;box-shadow:0 0 8px #38bdf8;"></span>
+                      <div>
+                        <small>Ngày ban hành</small>
+                        <b>24.02.2026</b>
+                      </div>
+                    </div>
+                    <div class="ext-node">
+                      <span class="ext-dot" style="background:#a855f7;box-shadow:0 0 8px #a855f7;"></span>
+                      <div>
+                        <small>Loại văn bản</small>
+                        <b>Quyết định</b>
+                      </div>
+                    </div>
+                    <div class="ext-node">
+                      <span class="ext-dot" style="background:#22c55e;box-shadow:0 0 8px #22c55e;"></span>
+                      <div>
+                        <small>Trích yếu nội dung</small>
+                        <b>Ban hành Quy chế quản lý...</b>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Cột Phải: Trạm Biến Hình Tên File Hàng Loạt -->
+                <div class="rename-morph-studio">
+                  <div class="rename-studio-top">
+                    <span class="xray-tag" style="background:rgba(243,106,22,0.22);border-color:rgba(251,191,36,0.5);color:#fde68a;">
+                      ⚡ BƯỚC 2 · ĐẶT LẠI TÊN CHUẨN ĐỒNG LOẠT
+                    </span>
+
+                    <div class="order-pill-switch">
+                      <button type="button" class="active" data-fname-mode="num">Số trước · Ngày sau</button>
+                      <button type="button" data-fname-mode="date">Ngày trước · Số sau</button>
+                    </div>
+                  </div>
+
+                  <div class="morph-file-cards">
+                    <div class="morph-file-card">
+                      <div class="m-file-before">
+                        <span class="m-file-raw">20.QD.QDTPT.24.02.2026.signed.pdf</span>
+                        <span class="m-file-badge">✓ Đã chuẩn hóa OCR</span>
+                      </div>
+                      <div class="m-file-after js-prop-name"
+                           data-num="20.QĐ.HĐQL 24.02.2026 - Quyết định Ban hành Quy chế quản lý hoạt động nhận ủy thác và ủy thác tại Quỹ Đầu tư phát triển thành phố Đà Nẵng.pdf"
+                           data-date="24.02.2026 - 20.QĐ.HĐQL - Quyết định Ban hành Quy chế quản lý hoạt động nhận ủy thác và ủy thác tại Quỹ Đầu tư phát triển thành phố Đà Nẵng.pdf">
+                        20.QĐ.HĐQL 24.02.2026 - Quyết định Ban hành Quy chế quản lý hoạt động nhận ủy thác và ủy thác tại Quỹ Đầu tư phát triển thành phố Đà Nẵng.pdf
+                      </div>
+                    </div>
+
+                    <div class="morph-file-card">
+                      <div class="m-file-before">
+                        <span class="m-file-raw">21.QD.QDTPT.24.02.2026.signed.pdf</span>
+                        <span class="m-file-badge">✓ Đã chuẩn hóa OCR</span>
+                      </div>
+                      <div class="m-file-after js-prop-name"
+                           data-num="21.QĐ.HĐQL 24.02.2026 - Quyết định Ban hành Quy chế quản lý tài chính và chi tiêu nội bộ tại Quỹ Đầu tư phát triển thành phố Đà Nẵng.pdf"
+                           data-date="24.02.2026 - 21.QĐ.HĐQL - Quyết định Ban hành Quy chế quản lý tài chính và chi tiêu nội bộ tại Quỹ Đầu tư phát triển thành phố Đà Nẵng.pdf">
+                        21.QĐ.HĐQL 24.02.2026 - Quyết định Ban hành Quy chế quản lý tài chính và chi tiêu nội bộ tại Quỹ Đầu tư phát triển thành phố Đà Nẵng.pdf
+                      </div>
+                    </div>
+
+                    <div class="morph-file-card">
+                      <div class="m-file-before">
+                        <span class="m-file-raw">18.QD.QDTPT.24.02.2026.signed.pdf</span>
+                        <span class="m-file-badge">✓ Đã chuẩn hóa OCR</span>
+                      </div>
+                      <div class="m-file-after js-prop-name"
+                           data-num="18.QĐ.HĐQL 24.02.2026 - Quyết định Ban hành Quy chế huy động vốn tại Quỹ Đầu tư phát triển thành phố Đà Nẵng.pdf"
+                           data-date="24.02.2026 - 18.QĐ.HĐQL - Quyết định Ban hành Quy chế huy động vốn tại Quỹ Đầu tư phát triển thành phố Đà Nẵng.pdf">
+                        18.QĐ.HĐQL 24.02.2026 - Quyết định Ban hành Quy chế huy động vốn tại Quỹ Đầu tư phát triển thành phố Đà Nẵng.pdf
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ================= SÂN KHẤU SỐ 3: BỘ CÔNG CỤ PDF VĂN PHÒNG ================= -->
+            <div class="deck-stage" data-deck-stage="2">
+              <div class="pdf-bento-stage">
+                <article class="pdf-power-card">
+                  <span class="pdf-power-tag orange">01 · XOAY TRANG THÔNG MINH</span>
+                  <div class="pdf-visual-box">
+                    <div class="anim-rotate-page">
+                      <span class="head"></span>
+                      <span></span>
+                      <span></span>
+                      <div style="font-size:9px;font-weight:900;color:#ea580c;text-align:center;">↻ Tự xoay 180°</div>
+                    </div>
+                  </div>
+                  <div>
+                    <h4>Xoay trang thông minh</h4>
+                    <p>Phát hiện ngay các trang bị kẹp ngược đầu khi scan và tự động xoay thẳng chuẩn chiều đọc.</p>
+                  </div>
+                </article>
+
+                <article class="pdf-power-card">
+                  <span class="pdf-power-tag purple">02 · LỌC BỎ TRANG TRẮNG</span>
+                  <div class="pdf-visual-box">
+                    <div class="anim-blank-group">
+                      <div class="mini-sheet"><i></i><i></i><i></i></div>
+                      <div class="mini-sheet blank-target">Trang trắng</div>
+                      <div class="mini-sheet"><i></i><i></i><i></i></div>
+                    </div>
+                  </div>
+                  <div>
+                    <h4>Tự động lọc bỏ trang trắng</h4>
+                    <p>Quét và loại bỏ hoàn toàn các trang giấy trắng thừa sinh ra khi scan 2 mặt tự động.</p>
+                  </div>
+                </article>
+
+                <article class="pdf-power-card">
+                  <span class="pdf-power-tag">03 · GHÉP &amp; TÁCH FILE PDF</span>
+                  <div class="pdf-visual-box">
+                    <div class="anim-merge-stack">
+                      <div class="merge-doc-a">Tờ trình</div>
+                      <span style="font-weight:900;color:#fde68a;">＋</span>
+                      <div class="merge-doc-b">Phụ lục</div>
+                    </div>
+                  </div>
+                  <div>
+                    <h4>Ghép &amp; Tách File PDF</h4>
+                    <p>Kéo thả trực quan để ghép nhiều văn bản, bảng biểu, ảnh chụp hoặc tách trang lẻ nhanh chóng.</p>
+                  </div>
+                </article>
+
+                <article class="pdf-power-card">
+                  <span class="pdf-power-tag emerald">04 · NÉN DUNG LƯỢNG PDF</span>
+                  <div class="pdf-visual-box">
+                    <div class="anim-compress-meter">
+                      <div class="compress-nums">
+                        <del>14,8 MB</del>
+                        <span>→</span>
+                        <strong>4,2 MB</strong>
+                      </div>
+                      <div class="compress-bar"><i></i></div>
+                      <div style="font-size:10.5px;color:#6ee7b7;font-weight:800;margin-top:7px;">Giảm tới 71% dung lượng</div>
+                    </div>
+                  </div>
+                  <div>
+                    <h4>Nén nhẹ &amp; Đóng dấu PDF</h4>
+                    <p>Tối ưu dung lượng file nhẹ gọn để đính kèm lên hệ thống văn bản điện tử mà vẫn giữ độ nét.</p>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <main class="container">
     <!-- 4. HƯỚNG DẪN CÀI ĐẶT & XỬ LÍ LỖI TẢI VỀ VỚI BIỂU TƯỢNG WINDOWS & MICROSOFT EDGE THẬT -->
     <section class="guide-master-section" id="huong-dan-cai-dat">
       <div class="guide-master-head">
+        <div class="guide-eyebrow-badge">
+          <i></i> CẨM NANG CÀI ĐẶT NHANH &amp; XỬ LÍ LỖI TRÌNH DUYỆT
+        </div>
         <h2>Hướng dẫn cài đặt (Windows) &amp; Xử lí lỗi tải về (Microsoft Edge)</h2>
         <p>
           Nhấn vào biểu tượng <b>Windows</b> hoặc <b>Microsoft Edge</b> bên dưới tương ứng với thông báo trên máy của bạn:
@@ -2162,7 +2301,7 @@
                 <h3>Nhấn <code>Install</code> &amp; Mở ngoài Desktop</h3>
               </div>
               <p class="v-step-desc" style="margin-top:8px;">
-                Cửa sổ cài đặt hiện lên, bạn nhấn nút <code>Install</code> $\rightarrow$ <code>Finish</code>. Biểu tượng <b>DDIF Office v2.0</b> sẽ xuất hiện ngay ngoài màn hình nền Desktop.
+                Cửa sổ cài đặt hiện lên, bạn nhấn nút <code>Install</code> → <code>Finish</code>. Biểu tượng <b>DDIF Office</b> sẽ xuất hiện ngay ngoài màn hình nền Desktop.
               </p>
             </div>
 
@@ -2171,7 +2310,7 @@
                 <div style="width:64px;height:46px;margin:0 auto 8px;">
                   <img src="https://github.com/quocddif/DDIF-Office/blob/main/Logo%20Office%20r%E1%BB%93ng%20cam%20v%C3%A0%20s%C3%B3ng%20xanh(2).png?raw=true" alt="" style="max-width:100%;max-height:100%;object-fit:contain;" />
                 </div>
-                <b style="display:block;font-size:13.5px;color:#0b192c;">DDIF Office v2.0 Setup</b>
+                <b style="display:block;font-size:13.5px;color:#0b192c;">DDIF Office Setup</b>
                 <small style="display:block;font-size:11px;color:#64748b;margin:3px 0 12px;">Sẵn sàng cài đặt vào máy tính của bạn</small>
                 <div style="display:inline-flex;gap:8px;">
                   <span class="call-btn-white" style="background:#0d6efd;color:#fff;border-color:#fde047;">③ Nhấn Install</span>
@@ -2299,7 +2438,7 @@
               <span class="emblem-letter-tag">S</span>
             </div>
             <div>
-              <b>QUY TRÌNH KHẮC PHỤC LỖI SMART APP CONTROL KHI CÀI ĐẶT DDIF OFFICE v2.0</b>
+              <b>QUY TRÌNH KHẮC PHỤC LỖI SMART APP CONTROL KHI CÀI ĐẶT DDIF OFFICE</b>
               <span>Áp dụng khi Windows 11 xuất hiện thông báo: “Smart App Control blocked an app that may be unsafe”.</span>
             </div>
           </div>
@@ -2497,7 +2636,7 @@
     </section>
 
     <footer class="footer">
-      <div><strong>DDIF Office v2.0</strong> — Phần mềm Chuẩn hóa Thể thức Văn bản, Đặt tên Hồ sơ &amp; Công cụ PDF</div>
+      <div><strong>DDIF Office</strong> — Phần mềm Chuẩn hóa Thể thức Văn bản, Đặt tên Hồ sơ &amp; Công cụ PDF</div>
       <div>Phát hành tại: <strong>quocddif.github.io/DDIF-Office</strong></div>
     </footer>
   </main>
@@ -2555,7 +2694,7 @@
         });
       });
 
-      // 5. Chuyển đổi 2 Phần Hướng dẫn (Windows vs Microsoft Edge) & Kết nối từ 2 nút trên Navbar
+      // 5. Chuyển đổi 3 Phần Hướng dẫn (Windows vs Microsoft Edge vs Smart App Control) & Kết nối từ Navbar
       const partTabs = document.querySelectorAll("[data-guide-part]");
       const partPanels = document.querySelectorAll("[data-guide-panel]");
       const navJumpBtns = document.querySelectorAll("[data-jump-guide]");
